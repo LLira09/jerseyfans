@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+body {
+    line-height: 1.6;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #3a3335;
+}
+ul {
+    list-style: none;
+}
+
+h2, h3, h4 {
+    text-transform: uppercase;
+}
+
+img {
+    width: 100%;
+}
+
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
+
+
+/* NavBar */
+/* .nav-item {
+    letter-spacing: .2em;
+    font-size: 14px;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    letter-spacing: .2em;
+}
+/* Footer */
+.main-footer {
+    height: 60px;
+}
+.main-footer p {
+    padding-top: 20px;
+    font-size: 14px;
+} 
+
+.stripe-buttton-el {
+    width: 100%;
+    display: block !important;
+    border: 0px !important;
+    padding-bottom: 10px;
+}
+
+.stripe-buttton-el span {
+    display: block;
+    position: relative;
+    padding: 0px 12px;
+    
+}

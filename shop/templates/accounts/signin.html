@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}
+   Sign In - Everything Books
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1 class="text-center">Login or Create a New Account</h1>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
+                <h2 class="text-center">New Customer</h2>
+                <a href="{% url 'signup' %}" class="btn btn-secondary">Create Account</a>
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-6 bg-light">
+                <h2>Sign In</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>{{ form | crispy }}</p>
+                    <button type="submit" class="btn btn-secondary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'shop',
+    'search',
+    'cart',
+    'stripe',
+    'order',
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -55,7 +61,8 @@ ROOT_URLCONF = 'jerseyfans.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'shop','templates/'), os.path.join(BASE_DIR, 'search' 'templates/'),
+        os.path.join(BASE_DIR, 'cart' 'templates/'), os.path.join(BASE_DIR, 'order' 'templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +70,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'shop.context_processors.menu_links',
+                'cart.context_processors.counter',
             ],
         },
     },
@@ -106,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 USE_I18N = True
 
@@ -126,3 +135,8 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+
+# Stripe Settings
+STRIPE_PUBLISHABLE_KEY = 'pk_test_KCMVMTz6zIuwoVjCeTNMAOQW00KTYKixTV'
+STRIPE_SECRET_KEY = 'sk_test_d2efTHaJ5NEfOOQdZLnvUbsG00BrEF0p7P'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

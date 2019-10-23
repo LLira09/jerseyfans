@@ -1,0 +1,11 @@
+<div class="container">
+    <ul>
+        {% if request.user.is_authenticated and request.user.first_name %}
+            <li>Welcome,  {{ request.user.first_name }} <i class="fas fa-user"></i></li>
+            <li><a href="">Sign Out<i class="fas fa-sign-out-alt"></i></a></li>
+        {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'signin' %}">Sign In</a></li>
+        {% endif %}
+    </ul>
+</div>

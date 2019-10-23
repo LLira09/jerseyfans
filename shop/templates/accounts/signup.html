@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}
+   SignUp - Everything Books
+{% endblock %}
+{% block content %}
+    <div>
+        {% if not form.is_valid %}
+            <div class="mx-auto">
+                <br>
+                <h1 class="text-center">Creat a new account</h1>
+                <br>
+                <div class="col-9 col-sm-9 col-md-6 col lg-5 mx-auto bg-light">
+                    <br>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <p>{{ form | crispy }}</p>
+                        <button type="submit" class="btn btn-secondary">Register</button>
+                    </form>
+                    <br>
+                </div>
+            </div>
+        {% else %}
+            <div class="mx-auto">
+                <br>
+                <h1 class="text-center">Your account has been created</h1>
+                <br>
+                <div>
+                    <a href="{% url 'shop:allProdCat' %}">Continue Shopping</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <br>
+
+{% endblock %}
