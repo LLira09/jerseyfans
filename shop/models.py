@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 from django.urls import reverse
 
 
@@ -28,8 +29,8 @@ class Product(models.Model):
     image = models.ImageField(upload_to='product', blank=True)
     stock = models.IntegerField()
     available = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(default=datetime.now, blank=True)
+    updated_at = models.DateTimeField(default=datetime.now, blank=True)
 
     class Meta:
         ordering = ('name',)

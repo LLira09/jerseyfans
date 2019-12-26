@@ -1,10 +1,11 @@
 from django.db import models
 from shop.models import Product
+from datetime import datetime
 
 
 class Cart(models.Model):
     cart_id = models.CharField(max_length=250, blank=True)
-    date_added = models.DateField(auto_now_add=True)
+    date_added = models.DateField(default=datetime.now, blank=True)
     class Meta: 
         db_table = 'Cart'
         ordering = ['date_added']
