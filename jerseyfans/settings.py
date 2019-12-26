@@ -140,3 +140,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 STRIPE_PUBLISHABLE_KEY = 'pk_test_KCMVMTz6zIuwoVjCeTNMAOQW00KTYKixTV'
 STRIPE_SECRET_KEY = 'sk_test_d2efTHaJ5NEfOOQdZLnvUbsG00BrEF0p7P'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
